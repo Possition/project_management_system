@@ -45,7 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		}
 	%> -->
 	<div class="content">
-		<form action="desk.html" method="post">
+		<!-- <form action="desk.html" method="post"> -->
 			<h1>欢迎登陆项目管理系统</h1>
 			<ul>
 				<li>
@@ -64,10 +64,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<input type="checkbox"  name="isUserCookie" checked="checked" />
 					<span>记住密码</span>
 					<br />
-					<input type="submit" class="submit" value="登    录"/>
+
+					<a href="desk.html">
+						<input type="submit" class="submit" value="登    录"/>
+					</a>
 				</div>
 			</ul>
-		</form>
+		<!-- </form> -->
 
 		<!--             <div class="check1" id="check1">不存在该用户名</div>
 	<div class="check2" id="check2"></div>
