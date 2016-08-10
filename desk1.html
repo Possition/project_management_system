@@ -1,0 +1,1042 @@
+<!-- <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%> -->
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+   <!--  <base href="<%=basePath%>"> -->
+    
+    <title>desk2</title>
+  <meta charset="utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+	
+<link rel="shortcut icon" href="img/favicon2.ico"/>
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<script type="text/javascript" src="js/main.js"></script>
+
+  </head>
+  
+  <body>
+    <!--顶部开始-->
+<div class="wrap"> 
+  <!--logo开始-->
+  <div class="logo">
+    	<div class="logo_left"> 
+        	<img src="img/logo.jpg" />
+        </div>
+        <span>项目管理系统</span>
+        <div class="logo_right"> 
+            <span class="span1" id="span1">
+            	<a href="javascript:;"  onClick = "jump('inner_desk','inner_user_client','inner_manage')">桌面</a>
+            </span> 
+            <span class="span2" id="span2">
+            	<a href="javascript:;"  onClick = "jump('inner_user_client','inner_desk','inner_manage')">用户|客户</a>
+            </span> 
+            <span class="span3" id="span3">
+            	<a href="javascript:;"  onClick = "jump('inner_manage','inner_desk','inner_user_client')">管理</a>
+            </span> 
+            <span class="span4" id="span4">
+            	<a href="logoutAction"  onClick = "jump('logout','1','2')">注销</a>
+            </span>
+        </div>
+  </div>
+  <div class="line"></div>
+  <!--logo结束-->
+  <div class="content">
+    <div class="left">
+    	  <span class="span1">ID:123456</span>
+	      <div class="face"></div>
+	      <div class="set_font"><a href="javascript:;">设置</a></div>
+	      <span class="set"></span>
+	      <div class="line2"></div>
+	      <div class="line3"></div>
+	      <input type="text" class="search" placeholder="搜索"/>
+	      <div class="search_btn"></div>
+	      <span class="online">在线人员：</span>
+	      <span class="online_user">h1</span>
+    </div>
+    <div class="right"> 
+          <!--desk内嵌层开始-->
+          <div class="inner_desk" id="inner_desk">
+                <nav>
+                    <span onclick="display('desk')"><a href="javascript:;">桌面</a></span>
+                </nav>
+                <div class="info">
+                  <div class="info_project" id="info_project">
+                        <div class="title">
+                              <span>我的项目列表</span>
+                              <input type="button" class="btn_none" onclick="display('main_project')" value="显示\隐藏"/>
+                        </div> 
+                        <br/>
+                        <div class="main_project" id="main_project">    	
+                                  <form>
+                                      <table id="project_table" class="project_table">
+                                        <tr>
+                                          <th>项目</th>
+                                          <th>完成</th>
+                                          <th>所剩天数</th>
+                                          <th></th>
+                                        </tr>
+                                        <tr>
+                                          <td><a href="javascript:;">项目1</a></td>
+                                          <td>3</td>
+                                          <td>43</td>
+                                          <td><a href="javascript:;" onclick="display('update_project')">编辑</a></td>
+                                          <td><a href="javascript:;">删除</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td><a href="javascript:;">项目2</a></td>
+                                          <td>3</td>
+                                          <td>43</td>
+                                          <td><a href="javascript:;" onclick="display('update_project')">编辑</a></td>
+                                          <td><a href="javascript:;">删除</a></td>
+                                        </tr>
+                                      </table>
+                                      <input type="button" class="btn_insertProject"  onclick="display('insert_project')" value="添加项目"/>						                              <br />
+                                </form>
+                           </div> 
+                            
+                            <div class="insert_project" id="insert_project"> 
+                                <form>
+                                      <span>添加项目</span>
+                                      <br />
+                                      <table>
+                                        <tr>
+                                            <td>名称:</td>
+                                            <td> <input type="text" value="项目1"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>描述:</td>
+                                            <td><textarea></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>预算:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>到期时间:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                      
+                                      </table>
+                                      <input type="button"  onclick="display('insert_project')" value="确认"/>
+                                      <input type="button"  onclick="display('insert_project')" value="取消"/>
+                                  </form>
+                             </div>
+                              <div class="update_project" id="update_project">
+                                  <form>
+                                      <span>编辑项目</span>
+                                      <table>
+                                        <tr>
+                                            <td>名称:</td>
+                                            <td> <input type="text" value="项目1"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>描述:</td>
+                                            <td><textarea></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>预算:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>到期时间:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                      
+                                      </table>
+                                      <input type="button"  onclick="display('update_project')" value="确认"/>
+                                      <input type="button"  onclick="display('update_project')" value="取消"/>
+                                   </form>
+                             </div>
+                  </div>
+                  <br />
+                  <!--我的项目结束-->
+                  <div class="info_taskLinked">
+                         <div class="title">
+                               <span>我的任务</span>
+                               <input type="button" class="btn_none"  onclick="display('main_taskLinked')" value="显示\隐藏"/>
+                          </div>  
+                          <br />       
+                          <div class="main_taskLinked" id="main_taskLinked">    
+                                <form>
+                                  <table class="taskLinked_table">
+                                    <tr>
+                                      <th>所有任务</th>
+                                      <th>项目</th>
+                                      <th>所剩天数</th>
+                                      <td></td>
+                                    </tr>
+                                    <tr>
+                                      <td><a href="javascript:;" onclick="display('select_task')">任务1</a></td>
+                                      <td><a href="javascript:;">项目1</a></td>
+                                      <td>51</td>
+                                      <td><a href="javascript:;" onclick="display('update_task')">编辑</a></td>
+                                      <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td><a href="javascript:;" onclick="display('select_task')">任务2</a></td>
+                                      <td><a href="javascript:;">项目2</a></td>
+                                      <td>4</td>
+                                      <td><a href="javascript:;" onclick="display('update_task')">编辑</a></td>
+                                      <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                  </table>
+                               
+                                     <input type="button" class="btn_insertTask" onclick="display('insert_task')" value="添加任务"/>
+                                  </form>
+                            </div>
+        
+                                 <div class="insert_task" id="insert_task">
+                                      <form>
+                                            <span>添加任务</span>
+                                            <table>
+                                                <tr>
+                                                    <td>任务名:</td>
+                                                    <td><input type="text" id="name" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>开始:</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>结束:</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>任务列表:</td>
+                                                    <td>  <select>
+                                                              <option>1234</option>
+                                                              <option>3245</option>
+                                                            </select>
+                                                    </td>    
+                                                </tr>                                    
+                                            </table>
+                                            <input type="button"  class="btn_insertMytask" onclick="display('insert_task')" value="确定"/>
+                                            <input type="reset" class="btn_reset" onclick="display('insert_task')" value="取消"/>
+                                      </form>
+                                </div>
+                                
+                                <div class="update_task" id="update_task">
+                                      <form>
+                                           <span>编辑任务</span>
+                                            <table>
+                                                <tr>
+                                                    <td>任务名：</td>
+                                                    <td><input type="text" id="name" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>开始:</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>结束:</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>任务列表:</td>
+                                                    <td>  <select>
+                                                              <option>1234</option>
+                                                              <option>3245</option>
+                                                            </select>
+                                                    </td>    
+                                                </tr>                                    
+                                            </table>
+                                            <input type="button"  class="btn_updatetask" onclick="display('update_task')" value="确定"/>
+                                            <input type="reset" class="btn_reset" onclick="display('update_task')" value="取消"/>
+                                      </form>
+                                </div>
+                                
+                                <div class="select_task" id="select_task">
+                                      <form>
+                                            <span>任务详情</span><br />
+                                            <table>
+                                                <tr>
+                                                    <td>任务名:</td>
+                                                    <td><input type="text" id="name" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>开始:</td>
+                                                    <td><input type="text" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>结束:</td>
+                                                    <td><input type="text" /></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>任务列表:</td>
+                                                    <td> <select>
+                                                              <option>1313</option>
+                                                              <option>1561</option>
+                                                         </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <input type="button" class="btn_selectTask" onclick="display('update_task')" value="编辑"/>
+                                  </form>
+                                </div>   
+                    </div>
+                  <!--我的任务列表结束-->
+                </div>
+            </div>
+          <!--desk内嵌层结束-->
+          
+          <!--manage内嵌层开始-->
+          <div class="inner_manage" id="inner_manage">
+                <nav>
+                    <span class="span7" id="span7"><a href="javascript:;" onClick = "jump3('info_project2')">项目列表</a></span>
+                    <span class="span8" id="span8"><a href="javascript:;" onClick = "jump3('info_mileage')">里程碑</a></span>
+                    <span class="span9" id="span9"><a href="javascript:;" onClick = "jump3('info_taskLinked2')">任务列表</a></span>
+                </nav>
+                <div class="info">
+                   <div class="info_project2" id="info_project2">
+                        <div class="title">
+                              <span>我的项目列表</span>
+                              <input type="button" class="btn_none" onClick="display('main_project2')" value="显示\隐藏"/>
+                        </div> 
+                        <br/>
+                        <div class="main_project2" id="main_project2">    	
+                                  <form>
+                                      <table id="project_table2" class="project_table2">
+                                        <tr>
+                                          <th>项目</th>
+                                          <th>完成</th>
+                                          <th>所剩天数</th>
+                                          <th></th>
+                                        </tr>
+                                        <tr>
+                                          <td><a href="javascript:;">项目1</a></td>
+                                          <td>3</td>
+                                          <td>43</td>
+                                          <td><a href="javascript:;" onclick="display('update_project2')">编辑</a></td>
+                                          <td><a href="javascript:;">删除</a></td>
+                                        </tr>
+                                        <tr>
+                                          <td><a href="javascript:;">项目2</a></td>
+                                          <td>3</td>
+                                          <td>43</td>
+                                          <td><a href="javascript:;" onclick="display('update_project2')">编辑</a></td>
+                                          <td><a href="javascript:;">删除</a></td>
+                                        </tr>
+                                      </table>
+                                      <input type="button" class="btn_insertProject2"  onclick="display('insert_project2')" value="添加项目"/>						                              <br />
+                                </form>
+                           </div> 
+                            
+                            <div class="insert_project2" id="insert_project2"> 
+                                <form>
+                                      <span>添加项目</span>
+                                      <br />
+                                      <table>
+                                        <tr>
+                                            <td> 名称:</td>
+                                            <td> <input type="text" value="项目1"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td> 描述:</td>
+                                            <td><textarea></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>预算:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>到期时间:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                      
+                                      </table>
+                                      <input type="button"  onclick="display('insert_project2')" value="确认"/>
+                                      <input type="button"  onclick="display('insert_project2')" value="取消"/>
+                                  </form>
+                             </div>
+                              <div class="update_project2" id="update_project2">
+                                  <form>
+                                      <span>编辑项目</span>
+                                      <table>
+                                        <tr>
+                                            <td> 名称:</td>
+                                            <td> <input type="text" value="项目1"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td> 描述:</td>
+                                            <td><textarea></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>预算:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                        <tr>
+                                            <td>到期时间:</td>
+                                            <td><input type="text" value="5234"/></td>
+                                        </tr>
+                                      
+                                      </table>
+                                      <input type="button"  onclick="display('update_project2')" value="确认"/>
+                                      <input type="button"  onclick="display('update_project2')" value="取消"/>
+                                   </form>
+                             </div>
+                   </div>
+                  <!--我的项目结束-->
+                   <div class="info_mileage" id="info_mileage">
+                          <div class="title">
+                               <span>项目1>里程碑列表</span>
+                               <input type="button" class="btn_none"  onclick="display('main_mileage')" value="显示\隐藏"/>
+                          </div>  
+                          <br />       
+                          <div class="main_mileage" id="main_mileage">    
+                                <form>
+                                  <table class="">
+                                    <tr>
+                                      <th>里程碑</th>
+                                      <th>到期日期</th>
+                                      <th>所剩天数</th>
+                                    </tr>
+                                    <tr>
+                                      <td><a href="javascript:;" onclick="display('select_mileage')">里程碑1</a></td>
+                                      <td>51</td>
+                                      <td>51</td>
+                                      <td><a href="javascript:;" onclick="display('update_mileage')">编辑</a></td>
+                                      <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td><a href="javascript:;" onclick="display('select_mileage')">里程碑2</a></td>
+                                      <td>4</td>
+                                      <td>51</td>
+                                      <td><a href="javascript:;" onclick="display('update_mileage')">编辑</a></td>
+                                      <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                  </table>
+                                  <input type="button" class="btn_insertMileage" onclick="display('insert_mileage')" value="添加里程碑"/>
+                                  </form>
+                            </div>
+                            
+                             <div class="insert_mileage" id="insert_mileage">
+                                      <form>
+                                            <span>添加里程碑</span>
+                                            <table>
+                                                <tr>
+                                                    <td>里程碑名称：</td>
+                                                    <td><input type="text" id="" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 开始：</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 结束：</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>                              
+                                            </table>
+                                            <input type="button"  class="btn_insertMileage" onclick="display('insert_mileage')" value="确定"/>
+                                            <input type="reset" class="btn_reset" onclick="display('insert_mileage')" value="取消"/>
+                                      </form>
+                                </div>
+                                
+                                <div class="update_mileage" id="update_mileage">
+                                      <form>
+                                            <span>编辑里程碑</span>
+                                            <table>
+                                                <tr>
+                                                    <td>里程碑名称：</td>
+                                                    <td><input type="text" id="" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 开始：</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 结束：</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>                              
+                                            </table>
+                                            <input type="button"  class="btn_updateMileage" onclick="display('update_mileage')" value="确定"/>
+                                            <input type="reset" class="btn_reset" onclick="display('update_mileage')" value="取消"/>
+                                      </form>
+                                </div>
+                                  
+                   </div>
+                   <!--里程碑管理结束-->
+                   <div class="info_taskLinked2" id="info_taskLinked2">
+                         <div class="title">
+                               <span>我的任务</span>
+                               <input type="button" class="btn_none"  onclick="display('main_taskLinked2')" value="显示\隐藏"/>
+                          </div>  
+                          <br />       
+                          <div class="main_taskLinked2" id="main_taskLinked2">    
+                                <form>
+                                  <table class="taskLinked_table">
+                                    <tr>
+                                      <th>所有任务</th>
+                                      <th>项目</th>
+                                      <th>所剩天数</th>
+                                    </tr>
+                                    <tr>
+                                      <td><a href="javascript:;" onclick="display('select_task2')">任务1</a></td>
+                                      <td><a href="javascript:;">项目1</a></td>
+                                      <td>51</td>
+                                      <td><a href="javascript:;" onclick="display('update_task2')">编辑</a></td>
+                                      <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                    <tr>
+                                      <td><a href="javascript:;" onclick="display('select_task2')">任务2</a></td>
+                                      <td><a href="javascript:;">项目2</a></td>
+                                      <td>4</td>
+                                      <td><a href="javascript:;" onclick="display('update_task2')">编辑</a></td>
+                                      <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                  </table>
+                               
+                                     <input type="button" class="btn_insertTask2" onclick="display('insert_task2')" value="添加任务"/>
+                                  </form>
+                            </div>
+        
+                                 <div class="insert_task2" id="insert_task2">
+                                      <form>
+                                            <span>添加任务</span>
+                                            <table>
+                                                <tr>
+                                                    <td>任务名：</td>
+                                                    <td><input type="text" id="name" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 开始：</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 结束：</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td> 任务列表:</td>
+                                                    <td>  <select>
+                                                              <option>1234</option>
+                                                              <option>3245</option>
+                                                            </select>
+                                                    </td>    
+                                                </tr>                                    
+                                            </table>
+                                            <input type="button"  class="btn_insertTask2" onclick="display('insert_task2')" value="确定"/>
+                                            <input type="reset" class="btn_reset" onclick="display('insert_task2')" value="取消"/>
+                                      </form>
+                                </div>
+                                
+                                <div class="update_task2" id="update_task2">
+                                      <form>
+                                           <span>编辑任务</span>
+                                            <table>
+                                                <tr>
+                                                    <td>任务名：</td>
+                                                    <td><input type="text" id="name" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>开始:</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>结束:</td>
+                                                    <td> <input type="text" /></td>    
+                                                </tr>
+                                                <tr>
+                                                    <td>任务列表:</td>
+                                                    <td>  <select>
+                                                              <option>1234</option>
+                                                              <option>3245</option>
+                                                            </select>
+                                                    </td>    
+                                                </tr>                                    
+                                            </table>
+                                            <input type="button"  class="btn_updateTask" onclick="display('update_task2')" value="确定"/>
+                                            <input type="reset" class="btn_reset" onclick="display('update_task2')" value="取消"/>
+                                      </form>
+                                </div>
+                                
+                                <div class="select_task2" id="select_task2">
+                                      <form>
+                                            <span>任务详情</span><br />
+                                            <table>
+                                                <tr>
+                                                    <td>任务名：</td>
+                                                    <td><input type="text" id="name" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>描述:</td>
+                                                    <td> <textarea id="decribe"></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>开始:</td>
+                                                    <td><input type="text" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>结束:</td>
+                                                    <td><input type="text" /></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>任务列表:</td>
+                                                    <td> <select>
+                                                              <option>1313</option>
+                                                              <option>1561</option>
+                                                         </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <input type="button" class="btn_selectTask" onclick="display('update_task2')" value="编辑"/>
+                                            <input type="button" class="btn_reset" onclick="display('update_task2')" value="取消"/>
+                                  </form>
+                                </div>   
+                    </div>
+                   <!--我的任务列表结束-->
+                </div>
+          </div>
+          <!--manage内嵌层结束-->
+          
+          <!--user_client内嵌层开始-->
+          <div class="inner_user_client" id="inner_user_client">
+                <nav>
+                    <span class="span5" id="span5"><a href="javascript:;" onClick="jump2('info_user')">我的账号</a></span>
+                    <span class="span6" id="span6"><a href="javascript:;" onClick="jump2('info_client')">客户管理</a></span>
+                </nav>
+                <div class="info">
+                	 
+                    <div class="info_user" id="info_user">
+                        <div class="title">
+                              <span>用户管理</span>
+                              <input type="button" class="btn_none" onclick="display('main_user')" value="显示\隐藏"/>
+                        </div> 
+                        <div class="main_user" id="main_user">    	
+                                  <form>
+                                      <table id="user_table" class="user_table">
+                                        
+                                        <tr>
+                                          <td><a href="javascript:;" name="user_info">h1</a></td>
+                                          <td><a href="javascript:;" onclick="display('update_user')">编辑</a></td>
+                                        </tr>
+                                        
+                                        <tr>
+                                          <td><a href="javascript:;" name="user_info">用户1</a></td>
+                                          <td><a href="javascript:;" onclick="display('update_user')">编辑</a></td>
+                                          <td><a href="javascript:;">删除</a></td>
+                                        </tr>
+                                      </table>
+                                      <input type="button" class="btn_insertUser"  onclick="display('insert_user')" value="添加用户"/>					
+                                </form>
+                           </div>    
+                           <div class="insert_user" id="insert_user">
+                                <form action="userInsertAction" method="post">
+                                <span>添加用户</span>
+                                <table>
+                                    <tr>
+                                        <td>用户：</td>
+                                        <td> <input type="text" value="" name="userName" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>公司：</td>
+                                        <td> <input type="text" value=""  name="conpany"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td> E-Mail：</td>
+                                        <td><input type="text" value="" name="email" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 密码：</td>
+                                        <td><input type="pasword" value=""  name="passWords"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 薪水：</td>
+                                        <td><input type="text" value=""  name="pay"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td>项目列表：</td>
+                                        <td>
+                                            <input type="checkbox" name="projectName"/>项目列表1
+                                            <input type="checkbox" name="projectName" />项目列表2
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td> 角色：</td>
+                                        <td>
+                                            <select>
+                                                <option name="roleName">角色1</option>
+                                                <option name="roleName">角色2</option>
+                                             </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                                     <input type="submit"  onclick="display('insert_user')" value="确认"/>
+                                     <input type="reset"  onclick="display('insert_user')" value="取消"/>
+                               </form>
+                            </div>
+                        
+                     
+                        
+                            <div class="update_user" id="update_user">
+                                <form>
+                                <span>编辑用户>h1</span>
+                                 <table>
+                                    <tr>
+                                        <td>用户：</td>
+                                        <td> <input type="text" value="h1" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>公司：</td>
+                                        <td> <input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> E-Mail：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> RRL：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 联系电话：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 手机号码：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                     <tr>
+                                        <td> 地址：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 邮编：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 城市：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 国家：</td>
+                                        <td><input type="text" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 状态：</td>
+                                        <td><input type="text" value="离线" /></td>
+                                    </tr>
+                                     <tr>
+                                        <td> 性别：</td>
+                                        <td><select>
+                                                <option>男</option>
+                                                <option>女</option>
+                                             </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 密码：</td>
+                                        <td><input type="pasword" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td> 重复密码：</td>
+                                        <td><input type="pasword" value="" /></td>
+                                    </tr>
+                                </table>
+                                 <input type="button"  onclick="display('update_user')" value="确认"/>
+                                 <input type="button"  onclick="display('update_user')" value="取消"/>
+                             </form>
+                          </div>
+                     </div>
+                     <!--用户管理结束-->
+                      <div class="info_role" id="info_role">
+                         <div class="title">
+                             <span>角色</span>
+                             <input type="button" class="btn_none" onclick="display('main_role')" value="显示\隐藏"/>
+                         </div>
+                         <div class="main_role" id="main_role">   
+                                <form>
+                                    <table>
+                                        <tr>
+                                            <td><a href="javascript:;">角色1</a></td>
+                                            <td><a href="javascript:;" onclick="display('update_role')">编辑</a></td>
+                                            <td><a href="javascript:;">删除</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="javascript:;">admin</a></td>
+                                             <td><a href="javascript:;" onclick="display('update_role')">编辑</a></td>
+                                        </tr>
+                                    </table>
+                                    <input type="button" class="btn_insertRole"  onclick="display('insert_role')" value="添加用户"/>	
+                                </form>
+                            </div>
+                            <div class="insert_role" id="insert_role">
+                                  <form>
+                                        <span>添加角色</span>
+                                        <table>
+                                             <tr>
+                                                <td>角色名称：</td>
+                                                <td> <input type="text" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>项目列表：</td>
+                                                <td><input type="checkbox" />添加
+                                                    <input type="checkbox" />编辑
+                                                    <input type="checkbox" />删除
+                                                    <input type="checkbox" />关闭
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>里程碑列表：</td>
+                                                <td><input type="checkbox" />视图
+                                                    <input type="checkbox" />添加
+                                                    <input type="checkbox" />编辑
+                                                    <input type="checkbox" />删除
+                                                    <input type="checkbox" />关闭
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>所有任务：</td>
+                                                <td><input type="checkbox" />视图
+                                                    <input type="checkbox" />添加
+                                                    <input type="checkbox" />编辑
+                                                    <input type="checkbox" />删除
+                                                    <input type="checkbox" />关闭
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <input type="button"  onclick="display('insert_role')" value="确认"/>
+                                        <input type="button"  onclick="display('insert_role')" value="取消"/>
+                                   </form>
+                            </div>
+                            <div class="update_role" id="update_role">
+                                    <form>
+                                        <span>编辑角色</span>
+                                        <table>
+                                             <tr>
+                                                <td>角色名称：</td>
+                                                <td> <input type="text" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td>项目列表：</td>
+                                                <td><input type="checkbox" />添加
+                                                    <input type="checkbox" />编辑
+                                                    <input type="checkbox" />删除
+                                                    <input type="checkbox" />关闭
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>里程碑列表：</td>
+                                                <td><input type="checkbox" />视图
+                                                    <input type="checkbox" />添加
+                                                    <input type="checkbox" />编辑
+                                                    <input type="checkbox" />删除
+                                                    <input type="checkbox" />关闭
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>所有任务：</td>
+                                                <td><input type="checkbox" />视图
+                                                    <input type="checkbox" />添加
+                                                    <input type="checkbox" />编辑
+                                                    <input type="checkbox" />删除
+                                                    <input type="checkbox" />关闭
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <input type="button"  onclick="display('update_role')" value="确认"/>
+                                        <input type="button"  onclick="display('update_role')" value="取消"/>
+                                   </form>
+                            </div>
+                       </div>
+                     <!--角色管理结束-->
+                      <div class="info_client" id="info_client">
+                          <div class="title">
+                               <span>客户列表</span>
+                               <input type="button" class="btn_none"  onclick="display('main_client')" value="显示\隐藏"/>
+                          </div>  
+                          <br />       
+                          <div class="main_client" id="main_client">    
+                                <form>
+                                  <table class="client_table">
+                                    <tr>
+                                       <th>客户</th>
+                                       <th>联系电话</th>
+                                       <th>E-mail</th>
+                                    </tr>
+                                     <tr>
+                                       <td>客户1</td>
+                                       <td>123456789101</td> 
+                                       <td>123456789101@qq.com</td>
+                                       <td><a href="javascript:;" onclick="display('update_client')">编辑</a></td>
+                                       <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                     <tr>
+                                       <td>客户2</td>
+                                       <td>5</td> 
+                                       <td>4</td>
+                                       <td><a href="javascript:;" onclick="display('update_client')">编辑</a></td>
+                                       <td><a href="javascript:;">删除</a></td>
+                                    </tr>
+                                  </table>
+                                     <input type="button" class="btn_insertClient" onclick="display('insert_client')" value="添加客户"/>
+                                  </form>
+                            </div>
+                             <div class="insert_client" id="insert_client">
+                                 <form>
+                                        <span>添加客户</span>
+                                         <table>
+                                                <tr>
+                                                    <td>公司：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>联系人：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-Mail:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>联系电话：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>手机号码：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>URL：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>地址：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮编：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>城市：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>国家：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>状态：</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>描述：</td>
+                                                    <td><textarea></textarea></td>
+                                                </tr>                                
+                                        </table>
+                                        <input type="button"  class="btn_insertClient" onclick="display('insert_client')" value="确定"/>
+                                        <input type="reset" class="btn_reset" onclick="display('insert_client')" value="取消"/>
+                                  </form>
+                             </div>
+                             
+                              <div class="update_client" id="update_client">
+                                 <form>
+                                        <span>编辑客户</span>
+                                         <table>
+                                                <tr>
+                                                    <td>公司:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>联系人:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>E-Mail:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>联系电话:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>手机号码:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>URL:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>地址:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>邮编:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>城市:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>国家:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                 <tr>
+                                                    <td>状态:</td>
+                                                    <td><input type="text" id="name" /><br /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>描述:</td>
+                                                    <td><textarea></textarea></td>
+                                                </tr>                                
+                                        </table>
+                                        <input type="button"  class="btn_updateClient" onclick="display('update_client')" value="确定"/>
+                                        <input type="reset" class="btn_reset" onclick="display('update_client')" value="取消"/>
+                                  </form>
+                             </div>
+                     </div>
+                     <!--客户管理结束-->
+                </div>
+          </div>
+          <!--user_client内嵌层结束-->
+    </div>
+  </div>
+  <!--content结束--> 
+  <!-- <footer></footer>--> 
+  <!--footer结束--> 
+</div>
+  </body>
+</html>

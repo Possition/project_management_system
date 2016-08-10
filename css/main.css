@@ -1,0 +1,494 @@
+@charset "utf-8";
+/* CSS Document */
+/*公共类开始*/
+	body {
+		margin: 0;
+		padding: 0;
+		font-size: 12px;
+		background-color: #ddd
+	}
+	a{ text-decoration:none;}
+	.top {
+		width: 100%;
+		height: 50px;
+		background: url(../img/top_bg.jpg) repeat-x;
+	}
+	.wrap {
+		width: 1024px;
+		margin: 0 auto;
+	}
+	.wrap .logo {
+		height: 80px;
+		background-color: #1fbc99;
+		position: relative;
+	}
+	.wrap .logo .logo_left {
+		width: 260px;
+		float: left;
+	}
+	.wrap .logo span {
+		color: #fff;
+		font-size: 25px;
+		position: absolute;
+		top: 30px;
+		left: 300px;
+	}
+	.wrap .logo .logo_right {
+		width: 390px;
+		height: 50px;
+		position: absolute;
+		bottom: 30px;
+		right: 280px;
+		text-align: center;
+	}
+	.wrap .logo .logo_right span {
+		width: 81px;
+		height: 50px;
+		background: #1FBC99;
+		display: inline-block;
+		position: relative;
+	}
+	
+	
+	.wrap .logo .logo_right .span1{
+		background: #27967e;
+		}
+	.wrap .logo .logo_right .span2{
+		background: #1FBC99;
+		}
+	.wrap .logo .logo_right .span3{
+		background: #1FBC99;
+		}
+	.wrap .logo .logo_right .span4{
+		background: #1FBC99;
+		}
+		
+		
+		
+		
+	.wrap .logo .logo_right a {
+		text-decoration: none;
+		color: #fff;
+		font-size: 18px;
+		line-height: 50px;
+		display: inline-block;
+		height: inherit;
+	}
+	.wrap .line {
+		width: 764px;
+		height: 4px;
+		position: relative;
+		float: right;
+		background: #27967e;
+	}
+	.content {
+		width: 1024px;
+		margin: 0 auto;
+	}
+		.content .left {
+		width: 260px;
+		height: 688px;
+		background: #272935;
+		float: left;
+		position: relative;
+	}
+	.content .left .line2{
+		width:255px;
+		height:2px;
+		background: #191921;
+		position:absolute;
+		top:360px;
+		left:3px;
+	}
+	.content .left .line3{
+		width:255px;
+		height:1px;
+		background: #303346;
+		position:absolute;
+		top:362px;
+		left:3px;
+	}
+	.content .left .set{
+		width:24px;
+		height:24px;
+		background: url(../img/set.png) repeat-x;
+		position:absolute;
+		top:162px;
+		left:224px;
+	}
+	.content .left .search_btn{
+		width: 33px;
+		height: 33px;
+		background: url(../img/search.png) repeat-x;
+		position: absolute;
+		top: 213px;
+		left: 200px;
+	}
+	.content .left .set_font a{
+		width:60px;
+		height:30px;
+		position:absolute;
+		top: 169px;
+		left: 194px;
+		color:#1fbc99;
+	}
+	.content .left .search{
+		width:160px;
+		height:40px;
+		background: none transparent scroll repeat 0% 0%;
+		background: #191921;
+		border:none;
+		position:absolute;
+		top:210px;
+		left:33px;
+		line-height:35px; 
+		padding-left:10px;
+		color:#fff;  
+		font-size:18px;
+	}
+	.content .left .span1 {
+		color: #fff;
+		position: absolute;
+		top: 30px;
+		left: 40px;
+		font-size: 18px;
+		float: left;
+	}
+	.content .left .online{
+		width: 150px;
+		height: 50px;
+		position: absolute;
+		top: 254px;
+		left: -18px;
+		color: #3eaee4;
+		font-size: 20px;
+		line-height: 50px;
+		padding: 50px;
+	}
+	.content .left .online_user{
+		width: 150px;
+		height: 50px;
+		position: absolute;
+		top: 320px;
+		left: -18px;
+		color: #3eaee4;
+		font-size: 18px;
+		line-height: 50px;
+		padding: 50px;
+	}
+	
+
+	.content .left .face {
+		width: 125px;
+		height: 125px;
+		position: absolute;
+		top: 60px;
+		left: 60px;
+		background: #CCC;
+		border: 1px solid #0fc482;
+		border-radius: 62.5px;
+		background-image: url(../img/face1.png);
+	}
+	.content .right {
+		width: 764px;
+		height: 684px;
+		background: #efeded;
+		float: right;
+		position: relative;
+	}
+	.content .right .inner_desk, 
+	.content .right .inner_user_client, 
+	.content .right .inner_manage {
+		width: 752px;
+		height: 616px;
+		background: #fff;
+		position: absolute;
+		top: 63px;
+		left: 7px;
+	}
+	
+	nav {
+		height:33px; 
+		width:750px;
+		background:#efeded; 
+		position:absolute;
+		display:block;
+		margin-top:-37px;
+		border-bottom:3px #fe5a3f solid;
+	}
+	nav span{
+			width:80px; 
+			height:33px;
+			display:inline-block; 
+			position:relative;
+			background:#fe5a3f;
+			text-align:center;
+			margin-left:7px;
+			}
+	.inner_user_client .span5{background:#fe5a3f;}
+	.inner_user_client .span6{background:#ff973a;}
+	.inner_manage  .span7 { 
+			background:#fe5a3f;
+			height:33px;
+			line-height:40px;;
+	}
+	.inner_manage  .span8 { 
+			background:#ff973a;
+			height:31px;
+			line-height:33px;;
+	}
+	.inner_manage  .span9 { 
+			background:#ff973a;
+			height:31px;
+			line-height:33px;;
+	}
+	
+	nav a{ 
+		 text-decoration:none;
+		 color:#fff; 
+		 font-size:18px;
+		 line-height:40px;
+		 display: inline-block; 
+		 height: inherit;
+		 
+		 }
+	.content .right .inner_desk .info, 
+	.content .right .inner_user_client .info,
+	.content .right .inner_manage .info{
+		 position:relative;
+		 }
+	.title{ 
+		height:30px; 
+		width:752px; 
+		background:#D8D8D8;
+		}
+	.title span{ 
+		float:left; 
+		line-height:40px; 
+		font-size:18px;
+		}
+	.title .btn_none{
+					 float:right; 
+					 background:#1baa94;
+					 border:none; 
+					 width:100px;
+					 height:40px;
+					 margin-right:10px;
+					 color:#fff;
+					 }
+	.main_project, 
+	.main_taskLinked, 
+	.main_mileage{ 
+				margin-bottom:45px;
+				}
+	.main_project2, 
+	.main_taskLinked2, 
+	.main_mileage{ 
+				margin-bottom:45px;
+				}
+	
+	.main_project table, 
+	.main_taskLinked table,
+	.main_mileage table{ 
+				width:500px;
+				border:2px 
+				dashed #1baa94;
+				text-align:center;
+				position:relative; 
+				font-size:18px; 
+				line-height:20px;
+				}
+				
+	.main_project2 table, 
+	.main_taskLinked2 table,
+	.main_mileage table{ 
+				width:500px;
+				border:2px 
+				dashed #1baa94;
+				text-align:center;
+				position:relative; 
+				font-size:18px; 
+				line-height:20px;
+				}
+				
+	.insert_project table,
+	.insert_project2 table, 
+	.update_project table, 
+	.update_project2 table, 
+	.insert_task table, 
+	.insert_task2 table, 
+	.update_task table, 
+	.update_task2 table, 
+	.select_task table, 
+	.select_task2 table, 
+	.insert_mileage table, 
+	.update_mileage table, 
+	.insert_user table, 
+	.update_user table, 
+	.insert_role table, 
+	.update_role table, 
+	.insert_client table, 
+	.update_client table{
+				text-align:left;	
+						}		
+				
+		
+	.main_project .btn_insertProject, 
+	.main_project2 .btn_insertProject2, 
+	.main_taskLinked .btn_insertTask,
+	.main_taskLinked2 .btn_insertTask2,
+	.main_mileage .btn_insertMileage{
+				float:left; 
+				background:#1baa94;
+				border:none; 
+				width:100px;
+				height:40px;
+				margin-right:10px;
+				color:#fff;
+				line-height:40px;
+				}
+
+/*公共类结束*/		
+
+/*项目管理和桌面类开始*/			
+	.insert_project,
+	.insert_project2, 
+	.update_project,
+	.update_project2,
+	.insert_task, 
+	.insert_task2, 
+	.update_task,
+	.update_task2,  
+	.select_task,
+	.select_task2,
+	.insert_mileage,
+	.update_mileage{
+		width: 739px;
+		background: #ccc;
+		display: none;
+		position: relative;
+		left: 6px;
+		margin-top:2px;
+	}
+	.insert_project span,
+	.insert_project2 span,
+	.update_project span,
+	.update_project2 span,
+	.insert_task span,
+	.insert_task2 span,
+	.update_task span,
+	.update_task2 span,
+	.select_task span,
+	.select_task2 span,
+	.insert_mileage span,
+	.update_mileage span{
+		font-size:18px;
+	}
+	
+	
+
+/*项目管理和桌面类结束*/	
+
+/*用户和客户管理开始*/
+	.insert_user, 
+	.update_user,  
+	.insert_role,  
+	.update_role,  
+	.insert_client, 
+	.update_client{
+		width: 739px;
+		background: #ccc;
+		display: none;
+		position: relative;
+		left: 6px;
+		margin-top:2px;
+	}
+	.info_user span,  
+	.insert_user span,  
+	.update_user span,  
+	.insert_role span,   
+	.update_role  span,  
+	.insert_client  span,   
+	.update_client  span{
+		font-size:18px;
+	}
+		
+		
+.inner_user_client .span5{ 
+				background:#fe5a3f;
+				height:33px;
+				line-height:40px;
+				}
+.inner_user_client .span6{ 
+				background:#ff973a;
+				height:31px;
+				line-height:33px;
+				}		 
+	.main_user,
+	.main_role,
+	.main_client{ 
+				margin-bottom:45px;
+				margin-top:10px;
+				}
+				
+	.info_role{ margin-top:20px;}
+	.main_user table, 
+	.main_role table,
+	.main_client table{ 
+				width:500px;
+				border:2px 
+				dashed #1baa94;
+				text-align:center;
+				position:relative; 
+				font-size:18px; 
+				line-height:20px;
+				}
+				
+	.main_user .btn_insertUser, 
+	.main_role .btn_insertRole, 
+	.main_client .btn_insertClient{
+				float:left; 
+				background:#1baa94;
+				border:none; 
+				width:100px;
+				height:40px;
+				margin-right:10px;
+				color:#fff;
+				line-height:40px;
+				}
+/*用户和客户管理结束*/
+
+.inner_desk{ display:block;}
+
+.inner_user_client{ display:none;}
+
+.inner_manage{display:none;}
+
+
+				
+.info_project{ display:block;}	
+.info_project2{ display:block;}		
+.info_taskLinked{ display:block;}
+.info_taskLinked2{ display:none;}
+.info_mileage{ display:none;}
+
+
+.main_taskLinked2{
+	display:block;
+	}
+.main_project2{
+	display:block;
+	}
+
+.info_user{ display:block;}
+.info_role{ display:block;}
+
+.info_client{display:none;}
+
+
+.right{
+	/* overflow-x:hidden; */
+	overflow-y: auto;
+	
+}
+
